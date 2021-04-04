@@ -7,11 +7,9 @@ var mapSearchByAddess = function( map , targetId , geoInput , $name , $address){
     if($name_val.length > 12){
         $name_val = $name_val.slice( 0 , 12 ) + "...";
     }
-
+    
 
     // 주소-좌표 변환 객체를 생성합니다
-
-
     var geocoder = new kakao.maps.services.Geocoder();
 
     // 주소로 좌표를 검색합니다
@@ -26,14 +24,14 @@ var mapSearchByAddess = function( map , targetId , geoInput , $name , $address){
             $(geoInput).val(
                 result[0].x + ',' + result[0].y
             );
-
+            
             // 마커이미지의 주소입니다    
             var imageSrc = 'https://t1.kakaocdn.net/localimg/localimages/07/mapapidoc/markerStar.png';
 
-
+            
             // 마커 이미지의 이미지 크기 입니다
             var imageSize = new kakao.maps.Size(24, 35); 
-
+    
             // 마커 이미지를 생성합니다    
             var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
 
@@ -62,7 +60,7 @@ var mapSearchByAddess = function( map , targetId , geoInput , $name , $address){
 
         }else{
             alert('데이터가 존재하지 않습니다. 다시 검색해주세요.');
-
+            
             // 좌표 및 인풋 초기화
             $(geoInput).val('');
             $address.val('');
@@ -70,3 +68,4 @@ var mapSearchByAddess = function( map , targetId , geoInput , $name , $address){
         }
     });   
 } 
+
