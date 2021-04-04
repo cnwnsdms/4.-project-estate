@@ -8,7 +8,7 @@ exports.get_apts = ( _ , res) => {
         res.render( 'admin/apts.html' ,{ apts : apts });
     });
 }
-
+ 
 exports.get_apts_write = ( _ , res) => {
     res.render( 'admin/write.html');
 }
